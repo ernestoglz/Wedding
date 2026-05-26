@@ -26,7 +26,7 @@ export const StarrySky = () => {
       const dpr = window.devicePixelRatio || 1;
       canvas!.width = canvas!.offsetWidth * dpr;
       canvas!.height = canvas!.offsetHeight * dpr;
-      ctx!.scale(dpr, dpr);
+      ctx!.setTransform(dpr, 0, 0, dpr, 0, 0);
       createStars();
     }
 
@@ -69,13 +69,16 @@ export const StarrySky = () => {
       animationId = requestAnimationFrame(draw);
     }
 
-    resize();
+    const observer = new ResizeObserver(() => {
+      resize();
+    });
+    observer.observe(canvas);
+
     animationId = requestAnimationFrame(draw);
-    window.addEventListener('resize', resize);
 
     return () => {
       cancelAnimationFrame(animationId);
-      window.removeEventListener('resize', resize);
+      observer.disconnect();
     };
   }, []);
 
