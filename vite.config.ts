@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => {
   const apiUrl = new URL(env.GUEST_API_TARGET);
 
   return {
-    base: '/Wedding/',
+    base: '/wedding/',
     plugins: [svgr(), react()],
     resolve: {
       alias: {

@@ -73,9 +73,6 @@ export const PersonalizedForm = (props: IProps) => {
         <h2 className="mb-2 font-display text-4xl italic text-white sm:text-5xl">
           Confirma tu Asistencia
         </h2>
-        <p className="mb-4 text-text-muted">
-          Por favor, confirma antes del 15 de Mayo de 2026.
-        </p>
         <p className="mb-8 text-sm italic text-text-muted">
          Queremos que te diviertas al máximo y que nunca dejés de bailar, por eso nuestra boda será sólo para adultos.
         </p>

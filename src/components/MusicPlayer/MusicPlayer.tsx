@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { Music, VolumeX } from 'lucide-react';
-import songUrl from '/public/john-mayer-new-light.mp3';
+const songUrl = `${import.meta.env.BASE_URL}john-mayer-new-light.mp3`;
 
 export const MusicPlayer = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
